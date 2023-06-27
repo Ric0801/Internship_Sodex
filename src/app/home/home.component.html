@@ -1,12 +1,6 @@
-<div>
-  <div class="border-solid border-black border-2 h-auto">
-    <p>EU</p>
-    <img src="" alt="" />
-  </div>
-  <div>
-    US
-    <img src="" alt="" />
+<div *ngFor="let teamInfo of teams">
+  <div class="">
+    <h5>{{ teamInfo.name }}</h5>
+    <p>{{ teamInfo.code }}</p>
   </div>
 </div>
-
-<button onclick="getTeamsResponse()">Click Me!</button>
