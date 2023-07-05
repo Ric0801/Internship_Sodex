@@ -1,28 +1,23 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environment';
 
-interface Team {
-  allStar: boolean,
-  city: string,
-  code: string,
+interface Games {
   id: number,
-  leagues: any,
-  logo: string,
-  name: string,
-  nbaFranchise: boolean,
-  nickname: string
+  live: string,
+  date: Date,
+  league: string,
+  season: number,
+  team: number,
+  h2h: string
 }
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-team',
+  templateUrl: './team.component.html',
+  styleUrls: ['./team.component.css']
 })
-export class HomeComponent implements OnInit {
-  teams: Team[] = [];
-  teamsWest: Team[] = [];
-  teamsEast: Team[] = [];
+export class TeamComponent {
+  games: Games[] = []
 
   ngOnInit(): void {
     this.getTeamsResponse()
@@ -30,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   async getTeamsResponse() {
     try {
-      const response = await fetch(environment.restApiServer + "/teams", {
+      const response = await fetch(environment.restApiServer + "/games", {
         method: 'GET',
         mode: environment.fetchMode as RequestMode,
         headers: {
@@ -43,16 +38,13 @@ export class HomeComponent implements OnInit {
       if (response.type === 'cors') {
         console.log("cors active")
         const result = await response.json();
-        this.teams = result;
+        this.games = result;
       } else if (response.ok) {
         const result = await response.json();
-        this.teams = result.body
+        this.games = result.body
       }
     } catch (err) {
       console.error(err);
     }
-
-    this.teamsWest = this.teams.filter((team) => team.leagues.standard?.conference === 'West')
-    this.teamsEast = this.teams.filter((team) => team.leagues.standard?.conference === 'East')
   }
 }
