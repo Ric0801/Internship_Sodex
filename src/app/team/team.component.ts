@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environment';
-
-interface Games {
-  id: number,
-  live: string,
-  date: Date,
-  league: string,
-  season: number,
-  team: number,
-  h2h: string
-}
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { StateService } from '../../stateService';
+import { Team } from '../interface/TeamInterface'
+import { Game } from '../interface/GameInterface'
+import { FetchService } from 'src/FetchService';
 
 @Component({
   selector: 'app-team',
@@ -17,10 +13,19 @@ interface Games {
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent {
-  games: Games[] = []
+  games: Game[] = []
+  team: Team | undefined = undefined
 
-  ngOnInit(): void {
-    this.getTeamsResponse()
+  constructor(private route: ActivatedRoute, private http: HttpClient, private stateService: StateService) {
+  }
+
+
+  async ngOnInit() {
+    await FetchService.initFetchService(this.stateService);
+    const id = this.route.snapshot.paramMap.get('id');
+    const value = Number.parseInt(id ?? "");
+    this.team = this.stateService.getTeamById(value);
+    console.log("Team init: ", this.team)
   }
 
   async getTeamsResponse() {

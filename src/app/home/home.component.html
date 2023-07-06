@@ -6,7 +6,10 @@
           <img class="h-12 w-12" src="{{ teamInfo.logo }}" alt="" />
         </div>
         <div>
-          <a routerLink="/team">{{ teamInfo.name }}</a>
+          <button (click)="navigateToTeam(teamInfo.id)">
+            {{ teamInfo.name }}
+          </button>
+          <p>{{ teamInfo.id }}</p>
         </div>
       </div>
     </div>
