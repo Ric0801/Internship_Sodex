@@ -1,21 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../environment';
-import { ActivatedRoute, Router } from '@angular/router';
-import { StateService } from '../../stateService';
-import { FetchService } from '../../FetchService';
-
-interface Team {
-  allStar: boolean,
-  city: string,
-  code: string,
-  id: number,
-  leagues: any,
-  logo: string,
-  name: string,
-  nbaFranchise: boolean,
-  nickname: string
-}
+import { Router } from '@angular/router';
+import { StateService } from '../../stateService/stateService';
+import { FetchService } from '../../stateService/FetchService';
+import { Team } from '../interface/TeamInterface';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +13,7 @@ export class HomeComponent implements OnInit {
   teamsWest: Team[] = [];
   teamsEast: Team[] = [];
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private stateService: StateService) {
+  constructor(private router: Router, private stateService: StateService) {
   }
 
   async ngOnInit() {
