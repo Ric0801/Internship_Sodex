@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TeamComponent } from './team/team.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { TeamComponent } from './team/team.component';
     HomeComponent,
     NavbarComponent,
     TeamComponent,
+    PlayerComponent,
 
   ],
   imports: [
