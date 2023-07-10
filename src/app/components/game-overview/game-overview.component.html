@@ -1,0 +1,33 @@
+<div *ngIf="team" class="pt-7">
+  <div>
+    <button (click)="navigateToPlayers(team.id)">{{ team.name }} Roster</button>
+  </div>
+</div>
+<div *ngIf="team">
+  <div class="float float-left w-screen">
+    <img class="h-20 w-20" src="{{ team.logo }}" alt="" />
+    <div class="">
+      <p class="mt-3 font-bold text-teamHeader">{{ team.name }}</p>
+    </div>
+  </div>
+</div>
+<div class="">
+  <div *ngIf="team">
+    <div *ngFor="let game of games">
+      <div class="grid grid-cols-3 grid-rows-2 w-auto">
+        <div>
+          <p>{{ game.teams.home.name }}</p>
+        </div>
+        <div>
+          <p>:</p>
+        </div>
+        <div>
+          <p>{{ game.teams.visitors.name }}</p>
+        </div>
+        <div>
+          <p>{{ game.date.start }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

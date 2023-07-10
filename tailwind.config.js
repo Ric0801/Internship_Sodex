@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     fontSize: {
       teamName: ['10px'],
-      link: ['6px']
+      link: ['6px'],
+      teamHeader: ['25px']
     },
     extend: {},
   },
