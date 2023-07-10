@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Player } from '../interface/PlayerInterface';
+import { Player } from '../../interface/PlayerInterface';
 
 
 @Component({

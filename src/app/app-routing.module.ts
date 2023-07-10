@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { TeamComponent } from './team/team.component';
-import { PlayerComponent } from './player/player.component';
+import { TeamsOverviewComponent } from './components/teams-overview/teams-overview.component';
+import { TeamComponent } from './pages/team/team.component';
+import { PlayerComponent } from './pages/player/player.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomePageComponent },
+  { path: 'east', component: TeamsOverviewComponent, data: { conference: "East" }, },
+  { path: 'west', component: TeamsOverviewComponent, data: { conference: "West" }, },
   { path: 'team/:id', component: TeamComponent },
   { path: 'player/:id', component: PlayerComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    bindToComponentInputs: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

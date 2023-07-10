@@ -2,20 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { TeamsOverviewComponent } from './components/teams-overview/teams-overview.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TeamComponent } from './team/team.component';
-import { PlayerComponent } from './player/player.component';
+import { TeamComponent } from './pages/team/team.component';
+import { PlayerComponent } from './pages/player/player.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    TeamsOverviewComponent,
     NavbarComponent,
     TeamComponent,
     PlayerComponent,
+    HomePageComponent,
 
   ],
   imports: [

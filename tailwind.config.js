@@ -4,6 +4,10 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    fontSize: {
+      teamName: ['10px'],
+      link: ['6px']
+    },
     extend: {},
   },
   plugins: [],
