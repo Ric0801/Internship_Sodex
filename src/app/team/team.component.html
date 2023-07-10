@@ -1,6 +1,6 @@
-<div>
+<div *ngIf="team">
   <div>
-    <a href="../player"><button>Player</button></a>
+    <button (click)="navigateToPlayers(team.id)">Roster</button>
   </div>
 </div>
 

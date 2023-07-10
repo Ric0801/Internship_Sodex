@@ -14,7 +14,7 @@ export class TeamComponent {
   games: Game[] | undefined = []
   team: Team | undefined = undefined
 
-  constructor(private route: ActivatedRoute, private stateService: StateService) {
+  constructor(private route: ActivatedRoute, private router: Router, private stateService: StateService) {
   }
 
   async ngOnInit() {
@@ -25,5 +25,9 @@ export class TeamComponent {
     this.games = this.stateService.getGamesByTeamId(value);
     console.log("Team init: ", this.team)
     console.log("Games init: ", this.games)
+  }
+
+  navigateToPlayers(id: number) {
+    this.router.navigate(['/player', id]);
   }
 }

@@ -1,7 +1,37 @@
-<div class="grid grid-cols-2 row-span-3 gap-4">
+<div class="mt-28 ml-28 float float-left space-y-3 justify-between">
+  <p>West Teams</p>
   <div *ngFor="let teamInfo of teamsWest">
-    <div class="grid-row-2">
-      <div class="border border-solid border-gray-500 flex flex-auto gap-10">
+    <div class="">
+      <div
+        class="border border-solid rounded h-16 flex flex-auto gap-10 items-center"
+      >
+        <div>
+          <img class="h-12 w-12" src="{{ teamInfo.logo }}" alt="" />
+        </div>
+        <div>
+          <h3>{{ teamInfo.name }}</h3>
+          <div class="text-xs float float-left pr-3">
+            <button>
+              <a (click)="navigateToTeam(teamInfo.id)">Team</a>
+            </button>
+          </div>
+          <div class="text-xs float float-left">
+            <button>
+              <a (click)="navigateToTeamsRoster(teamInfo.id)">Player</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-28 mr-28 float float-right space-y-3 justify-between">
+  <p>East Teams</p>
+  <div *ngFor="let teamInfo of teamsEast">
+    <div class="flex items-center">
+      <div
+        class="border border-solid rounded min-h-fit h-16 border-gray-500 flex flex-auto gap-10 items-center"
+      >
         <div>
           <img class="h-12 w-12" src="{{ teamInfo.logo }}" alt="" />
         </div>
@@ -9,19 +39,6 @@
           <button (click)="navigateToTeam(teamInfo.id)">
             {{ teamInfo.name }}
           </button>
-          <p>{{ teamInfo.id }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div *ngFor="let teamInfo of teamsEast">
-    <div class="grid-row-2">
-      <div class="border border-solid border-gray-500 flex flex-auto gap-10">
-        <div>
-          <img class="h-12 w-12" src="{{ teamInfo.logo }}" alt="" />
-        </div>
-        <div>
-          <a routerLink="/team">{{ teamInfo.name }}</a>
         </div>
       </div>
     </div>

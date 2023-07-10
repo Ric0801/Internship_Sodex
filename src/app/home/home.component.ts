@@ -27,4 +27,8 @@ export class HomeComponent implements OnInit {
   navigateToTeam(id: number) {
     this.router.navigate(['/team', id]);
   }
+
+  navigateToTeamsRoster(id: number) {
+    this.router.navigate(['/team', id, '/player']);
+  }
 }
