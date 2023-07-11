@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StateService } from '../../../stateService/stateService';
-import { FetchService } from '../../../stateService/FetchService';
-import { Team } from '../../interface/TeamInterface';
+import { StateService } from '../../../../stateService/stateService';
+import { FetchService } from '../../../../stateService/FetchService';
+import { Team } from '../../../interface/TeamInterface';
 import { Input } from '@angular/core';
+import { TeamLinkComponent } from '../team-link/team-link.component';
 
 @Component({
   selector: 'teams-overview',
@@ -14,13 +15,6 @@ export class TeamsOverviewComponent implements OnInit {
   @Input() conference?: string;
   teamsOfConference: Team[] = [];
 
-  /*
-  teamsWest: Team[] = [];
-  teamsEast: Team[] = [];
-  west = 'West Coast';
-  east = 'East Coast';
-  */
-
   constructor(private router: Router, private stateService: StateService) {
   }
 
@@ -28,14 +22,13 @@ export class TeamsOverviewComponent implements OnInit {
     await FetchService.initFetchService(this.stateService);
     let teams = this.stateService.getAllTeams()
     this.teamsOfConference = teams.filter((team) => team.leagues.standard?.conference === this.conference)
-    //this.teamsWest = teams.filter((team) => team.leagues.standard?.conference === 'West')
-    //this.teamsEast = teams.filter((team) => team.leagues.standard?.conference === 'East')
   }
 
 
-  navigateToTeam(id: number) {
+  navigateToTeam(id: any) {
     this.router.navigate(['/team', id]);
   }
+
 
   navigateToTeamsRoster(id: number) {
     this.router.navigate(['/team', id, '/player']);

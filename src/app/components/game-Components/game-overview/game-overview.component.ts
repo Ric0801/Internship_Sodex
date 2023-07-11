@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StateService } from '../../../stateService/stateService';
-import { Team } from '../../interface/TeamInterface'
-import { Game } from '../../interface/GameInterface'
+import { StateService } from '../../../../stateService/stateService';
+import { Team } from '../../../interface/TeamInterface'
+import { Game } from '../../../interface/GameInterface'
 import { FetchService } from 'src/stateService/FetchService';
 
 @Component({

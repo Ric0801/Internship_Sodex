@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TeamsOverviewComponent } from 'src/app/components/teams-overview/teams-overview.component';
+import { TeamsOverviewComponent } from 'src/app/components/team-Components/teams-overview/teams-overview.component';
 
 @Component({
   selector: 'app-home-page',
