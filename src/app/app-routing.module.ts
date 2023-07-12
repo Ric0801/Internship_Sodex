@@ -4,7 +4,7 @@ import { TeamsOverviewComponent } from './components/team-Components/teams-overv
 import { GamesOverview } from './components/game-Components/game-overview/game-overview.component';
 import { PlayerComponent } from './pages/player/player.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { TeamsComponent } from './pages/teams/teams.component';
+import { TeamsComponent } from './pages/teams-page/teams.component';
 
 
 const routes: Routes = [

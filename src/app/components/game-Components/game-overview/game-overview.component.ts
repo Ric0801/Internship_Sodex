@@ -25,8 +25,6 @@ export class GamesOverview {
     this.games = this.stateService.getGamesByTeamId(value);
     console.log("Team init: ", this.team)
     console.log("Games init: ", this.games)
-
-
   }
 
   navigateToPlayers(id: number) {

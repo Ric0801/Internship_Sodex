@@ -9,9 +9,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { GamesOverview } from './components/game-Components/game-overview/game-overview.component';
 import { PlayerComponent } from './pages/player/player.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { TeamsComponent } from './pages/teams/teams.component';
+import { TeamsComponent } from './pages/teams-page/teams.component';
 import { TeamNameComponent } from './components/team-Components/team-name/team-name.component';
 import { TeamLinkComponent } from './components/team-Components/team-link/team-link.component';
+import { GameDateComponent } from './components/game-Components/game-date/game-date.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TeamLinkComponent } from './components/team-Components/team-link/team-l
     TeamsComponent,
     TeamNameComponent,
     TeamLinkComponent,
+    GameDateComponent,
   ],
   imports: [
     BrowserModule,
