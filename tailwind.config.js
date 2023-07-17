@@ -9,7 +9,11 @@ module.exports = {
       link: ['10px'],
       teamHeader: ['35px']
     },
-    extend: {},
+    extend: {
+      colors: {
+        'navbar': 'rgb(248 250 252)',
+      }
+    },
   },
   plugins: [],
 }
