@@ -5,11 +5,15 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      teamName: ['10px'],
-      link: ['6px'],
-      teamHeader: ['25px']
+      teamName: ['12px'],
+      link: ['10px'],
+      teamHeader: ['35px']
     },
-    extend: {},
+    extend: {
+      colors: {
+        'navbar': 'rgb(248 250 252)',
+      }
+    },
   },
   plugins: [],
 }

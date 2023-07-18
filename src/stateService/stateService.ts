@@ -64,7 +64,7 @@ export class StateService {
     */
 
     setPlayer(players: Player[]) {
-        console.log("setTeams: " + players.length)
+        console.log("setPlayers: " + players.length)
         this.playerSubject.next(players);
     }
 

@@ -2,16 +2,16 @@
   <div class="mt-28 ml-28 float float-left space-y-3 justify-between">
     <p>{{ conference }} Coast</p>
     <div *ngFor="let teamInfo of teamsOfConference">
-      <div class="flex flex-auto gap-5 items-center">
+      <div class="flex gap-2">
         <div>
-          <img class="h-6 w-6" src="{{ teamInfo.logo }}" alt="" />
+          <img class="h-9 w-9" src="{{ teamInfo.logo }}" alt="" />
         </div>
         <div>
           <team-name class="text-teamName" name="{{ teamInfo.name }}" />
-          <div class="text-link float float-left pr-3">
+          <div class="text-link float-left pr-3">
             <team-link (click)="navigateToTeam(teamInfo.id)"></team-link>
           </div>
-          <div class="text-link float float-left"></div>
+          <div class="text-link float-left"></div>
         </div>
       </div>
     </div>
