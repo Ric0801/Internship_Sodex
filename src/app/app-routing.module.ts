@@ -9,10 +9,10 @@ import { TeamsComponent } from './pages/teams-page/teams.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'east', component: TeamsOverviewComponent, data: { conference: "East" }, },
-  { path: 'west', component: TeamsOverviewComponent, data: { conference: "West" }, },
+  { path: 'teams/east', component: TeamsOverviewComponent, data: { conference: "East" }, },
+  { path: 'teams/west', component: TeamsOverviewComponent, data: { conference: "West" }, },
   { path: 'team/:id', component: TeamsComponent },
-  { path: 'player/:id', component: PlayerComponent },
+  { path: 'player', component: PlayerComponent },
 ];
 
 @NgModule({

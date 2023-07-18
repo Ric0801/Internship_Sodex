@@ -77,4 +77,5 @@ export class StateService {
         const players = this.playerSubject.getValue();
         return players.find(player => player.id === id);
     }
+
 }

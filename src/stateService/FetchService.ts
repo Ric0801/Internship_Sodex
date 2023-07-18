@@ -72,7 +72,7 @@ export class FetchService {
 
     async getPlayerResponse() {
         try {
-            const response = await fetch(environment.restApiServer + "/player", {
+            const response = await fetch(environment.restApiServer + "/player?team=1&season=2021", {
                 method: 'GET',
                 mode: environment.fetchMode as RequestMode,
                 headers: {
