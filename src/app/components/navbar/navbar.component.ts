@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   isOpen = false;
+  hamburgerMenu = false;
 
   onClick(){
     this.isOpen = true;
+  }
+
+  menu() {
+    this.hamburgerMenu = true;
   }
 }
