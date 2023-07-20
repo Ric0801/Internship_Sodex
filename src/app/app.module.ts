@@ -13,6 +13,7 @@ import { TeamsComponent } from './pages/teams-page/teams.component';
 import { TeamNameComponent } from './components/team-Components/team-name/team-name.component';
 import { TeamLinkComponent } from './components/team-Components/team-link/team-link.component';
 import { GameDateComponent } from './components/game-Components/game-date/game-date.component';
+import { GameResultComponent } from './components/game-Components/game-result/game-result.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { GameDateComponent } from './components/game-Components/game-date/game-d
     TeamNameComponent,
     TeamLinkComponent,
     GameDateComponent,
+    GameResultComponent,
   ],
   imports: [
     BrowserModule,

@@ -56,6 +56,7 @@ export class StateService {
 
     getGameEnd(): Game[] {
         const games = this.gamesSubject.getValue();
+        const teams = this.teamsSubject.getValue();
         return games.filter(game => game.date.end);
     }
 
@@ -64,9 +65,15 @@ export class StateService {
         return games.filter(game => game.date.duration);
     }
 
+    getGameResult(team: Game[]): Game[] {
+        const games = this.gamesSubject.getValue();
+        team = games.filter(game => game.scores.home || game.scores.visitors)
+        return team;
+    }
+
     getGamesByTeamId(id: number): Game[] | undefined {
         const games = this.gamesSubject.getValue();
-        return games.filter(game => game.teams.home.id === id || game.teams.visitors.id === id);
+        return games.filter(game => game.teams.home.id === id || game.teams.visitors.id === id || game.scores.visitors || game.scores.home || game.date.duration);
     }
 
     /*

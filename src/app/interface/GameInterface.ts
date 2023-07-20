@@ -14,5 +14,13 @@ export interface Game {
         home: Team,
         visitors: Team,
     },
-    h2h: string
+    h2h: string,
+    scores: {
+        home: {
+            points: number;
+        },
+        visitors: {
+            points: number;
+        }
+    }
 }
