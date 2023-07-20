@@ -49,9 +49,19 @@ export class StateService {
         return games;
     }
 
-    getGameByTeamId(id: number): Game | undefined {
+    getGameStart(): Game[] {
         const games = this.gamesSubject.getValue();
-        return games.find(game => game.teams.home.id === id || game.teams.visitors.id === id);
+        return games.filter(game => game.date.start);
+    }
+
+    getGameEnd(): Game[] {
+        const games = this.gamesSubject.getValue();
+        return games.filter(game => game.date.end);
+    }
+
+    getGameDuration(): Game[] {
+        const games = this.gamesSubject.getValue();
+        return games.filter(game => game.date.duration);
     }
 
     getGamesByTeamId(id: number): Game[] | undefined {

@@ -13,8 +13,11 @@ import { Team } from 'src/app/interface/TeamInterface';
 })
 export class GameDateComponent {
   @Input() date?: Date;
-  dateOfGame: Game[] | undefined = []
+  gameByTeamId: Game[] | undefined = []
   team: Team | undefined = undefined;
+  gameStart: any;
+  gameEnd: any;
+  gameDuration: any;
 
   constructor(private stateService: StateService, private route: ActivatedRoute) {
   }
@@ -24,6 +27,15 @@ export class GameDateComponent {
     const id = this.route.snapshot.paramMap.get('id');
     const value = Number.parseInt(id ?? "");
     this.team = this.stateService.getTeamById(value);
-    this.dateOfGame = this.stateService.getGamesByTeamId(value);
+    this.gameByTeamId = this.stateService.getGamesByTeamId(value);
+
+    this.gameStart = this.stateService.getGameStart();
+    this.gameStart = new Date;
+
+    this.gameEnd = this.stateService.getGameEnd();
+    this.gameEnd = new Date;
+
+    this.gameDuration = this.stateService.getGameDuration();
+    this.gameDuration = new Date;
   }
 }
