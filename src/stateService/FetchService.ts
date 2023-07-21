@@ -63,6 +63,14 @@ export class FetchService {
             if (response.type === 'cors' || response.ok) {
                 const result = await response.json();
                 this.games = result;
+                this.games = this.games.map((g) => {
+                    g.date.start = new Date(g.date.start)
+                    g.date.end = new Date(g.date.end)
+                    return g
+                })
+
+                //console.log("AAAAAAAAAAA", this.games)
+
                 this.stateService.setGames(this.games)
             }
         } catch (err) {

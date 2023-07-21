@@ -4,8 +4,8 @@ export interface Game {
     id: number,
     live: string,
     date: {
-        start: Date,
-        end: Date,
+        start: string | Date,
+        end: string | Date,
         duration: string
     },
     league: string,
