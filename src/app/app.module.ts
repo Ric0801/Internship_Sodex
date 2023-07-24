@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeamsOverviewComponent } from './components/team-Components/teams-overview/teams-overview.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './components/pageBack-component/pageBack.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { GamesOverview } from './components/game-Components/game-overview/game-overview.component';
 import { PlayerComponent } from './pages/player/player.component';
@@ -13,8 +13,7 @@ import { TeamsComponent } from './pages/teams-page/teams.component';
 import { TeamNameComponent } from './components/team-Components/team-name/team-name.component';
 import { TeamLinkComponent } from './components/team-Components/team-link/team-link.component';
 import { GameDateComponent } from './components/game-Components/game-date/game-date.component';
-import { TeamsWestComponent } from './pages/teams-west/teams-west.component';
-import { TeamsEastComponent } from './pages/teams-east/teams-east.component';
+import { GameResultComponent } from './components/game-Components/game-result/game-result.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { TeamsEastComponent } from './pages/teams-east/teams-east.component';
     TeamNameComponent,
     TeamLinkComponent,
     GameDateComponent,
-    TeamsWestComponent,
-    TeamsEastComponent,
+    GameResultComponent,
   ],
   imports: [
     BrowserModule,
