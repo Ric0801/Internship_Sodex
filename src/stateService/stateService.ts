@@ -73,7 +73,13 @@ export class StateService {
 
     getGamesByTeamId(id: number): Game[] | undefined {
         const games = this.gamesSubject.getValue();
-        return games.filter(game => game.teams.home.id === id || game.teams.visitors.id === id || game.scores.visitors || game.scores.home || game.date.duration);
+        return games.filter(game => game.teams.home.id === id || game.teams.visitors.id === id);
+    }
+
+    getGamesByDate(id: number): Game[] | undefined {
+        const games = this.gamesSubject.getValue();
+        return games.filter(game => game.teams.home.id === id || game.teams.visitors.id === id || 
+            game.scores.home || game.scores.visitors || game.date.duration);
     }
 
     /*

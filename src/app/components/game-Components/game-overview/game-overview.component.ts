@@ -8,7 +8,6 @@ import { FetchService } from 'src/stateService/FetchService';
 @Component({
   selector: 'game-overview',
   templateUrl: './game-overview.component.html',
-  styleUrls: ['./game-overview.component.css']
 })
 export class GamesOverview {
   games: Game[] | undefined = []

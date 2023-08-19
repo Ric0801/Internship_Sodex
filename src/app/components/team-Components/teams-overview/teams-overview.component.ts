@@ -9,7 +9,6 @@ import { TeamLinkComponent } from '../team-link/team-link.component';
 @Component({
   selector: 'teams-overview',
   templateUrl: './teams-overview.component.html',
-  styleUrls: ['./teams-overview.component.css']
 })
 export class TeamsOverviewComponent implements OnInit {
   @Input() conference?: string;

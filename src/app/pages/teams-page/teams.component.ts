@@ -4,7 +4,6 @@ import { GamesOverview } from 'src/app/components/game-Components/game-overview/
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.css']
 })
 export class TeamsComponent {
 

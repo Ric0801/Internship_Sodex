@@ -8,7 +8,6 @@ import { Input } from '@angular/core';
 @Component({
   selector: 'team-name',
   templateUrl: './team-name.component.html',
-  styleUrls: ['./team-name.component.css']
 })
 export class TeamNameComponent {
   @Input() name?: string;

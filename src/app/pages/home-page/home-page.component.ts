@@ -4,7 +4,6 @@ import { TeamsOverviewComponent } from 'src/app/components/team-Components/teams
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
 

@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-pageBack',
   templateUrl: './pageBack.component.html',
-  styleUrls: ['./pageBack.component.css']
 })
 export class NavbarComponent {
   @Input() pageBack?: String;

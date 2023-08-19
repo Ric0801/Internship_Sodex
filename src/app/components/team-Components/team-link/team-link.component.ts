@@ -8,7 +8,6 @@ import { Input } from '@angular/core';
 @Component({
   selector: 'team-link',
   templateUrl: './team-link.component.html',
-  styleUrls: ['./team-link.component.css']
 })
 export class TeamLinkComponent {
   @Input() _id?: number;
